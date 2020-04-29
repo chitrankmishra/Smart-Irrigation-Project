@@ -1,5 +1,5 @@
 //python api url
-api_url = "http://127.0.0.1:5000";
+api_url = " https://thawing-coast-20586.herokuapp.com/";
 
 function deleteCookies() {
 	setCookie("username", "", -1);
