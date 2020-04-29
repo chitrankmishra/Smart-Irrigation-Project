@@ -1,0 +1,166 @@
+@import "template.css";
+
+/* 
+Rose Gold: #bd8c7d
+Soft Gold: #d1bfa7
+Silver: #8e8e90
+Onyx: #49494b */
+
+input[type="text"] {
+	background-color: rgba(100, 100, 100, 0);
+	border: 0px;
+	border-radius: 2px;
+	color: white;
+	width: 100%;
+}
+input[type="text"]:focus {
+	border-bottom: 2px solid white;
+}
+input[type="password"] {
+	background-color: rgba(100, 100, 100, 0);
+	border: 0px;
+	border-radius: 2px;
+	color: white;
+	width: 100%;
+}
+input[type="password"]:focus {
+	border-bottom: 2px solid white;
+}
+
+.brandName {
+	margin-top: 40px;
+	font-family: Lobster-Regular;
+	font-size: 50px;
+}
+
+.btnHover:hover {
+	background-color: rgba(100, 100, 100, 0.4);
+	box-shadow: 0px 0px 4px 4px rgb(40, 40, 40);
+}
+
+.hrDefined {
+	width: 150%;
+	margin-left: -25%;
+}
+.header {
+	box-shadow: none;
+	height: 50px;
+}
+
+.loginDialog {
+	line-height: 45px;
+	width: 600px;
+	font-family: Baloo-Regular;
+	font-size: 20px;
+	border-radius: 5px;
+	padding: 60px;
+	/* box-shadow: 4px 4px 7px 1px rgb(40, 40, 40); */
+}
+
+#brandName {
+	font-family: Pathway;
+	font-size: 50px;
+	color: white;
+	display: none;
+}
+
+#btnContact {
+	background-color: rgba(100, 100, 100, 0);
+	color: white;
+	border: 2px solid white;
+	font-size: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	float: right;
+}
+#btnContactDiv {
+	margin-top: 20px;
+	margin-right: 0px;
+	font-family: Baloo-Regular;
+}
+
+#btnLogin {
+	background-color: rgba(100, 100, 100, 0);
+	color: white;
+	border: 2px solid white;
+	font-size: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	float: right;
+}
+
+#contactUsDiv {
+	width: 100%;
+	color: white;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#logo {
+	height: 150px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: unset;
+	float: none;
+}
+
+#contactEmail {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#btnNewAccount,
+#btnSubmit {
+	background-color: rgba(100, 100, 100, 0);
+	color: white;
+	border: 2px solid white;
+	border-radius: 5px;
+	font-size: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	margin-right: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#btnQuery {
+	background-color: rgba(100, 100, 100, 0);
+	color: white;
+	border: 2px solid white;
+	border-radius: 5px;
+	font-size: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	margin-left: 14px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#userQuery {
+	width: 100%;
+	height: 100px;
+	background-color: #30885f;
+	border-radius: 5px;
+}
+
+#modal-body {
+	font-family: Baloo-Regular;
+	font-size: large;
+	background-color: #37a06f;
+	padding: 20px;
+}
+#modal-content {
+	width: 100%;
+	box-shadow: 0px 0px 20px 1px rgb(40, 40, 40);
+}
+#modal-header {
+	color: #37a06f;
+	height: 50px;
+}
+
+/* @media only screen and (max-width: 1062px) {
+	div.side-pane {
+		display: none;
+	}
+} */

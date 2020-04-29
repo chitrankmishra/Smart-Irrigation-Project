@@ -1,0 +1,31 @@
+@import "template.css";
+
+.farmhouse {
+	width: 100%;
+}
+
+.statusDataCollection {
+	margin: 2px;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px black solid;
+}
+
+.statusDataHeader {
+	color: Black;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: Baloo-Regular;
+}
+
+.statusDataText {
+	font-size: 14px;
+	color: orange;
+	font-family: Baloo-Regular;
+}
+
+.statusFarmUnit {
+}
+
+@media screen and (max-width: 700px) {
+}
