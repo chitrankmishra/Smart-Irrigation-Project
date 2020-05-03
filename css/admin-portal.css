@@ -1,0 +1,50 @@
+@import "template.css";
+
+#warning {
+	color: red;
+	display: block;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.selectionDiv {
+	margin-top: 40px;
+}
+
+.chartImg {
+	width: 100%;
+}
+
+.controlSegment {
+	margin-top: 20px;
+	text-align: center;
+}
+.timeInput {
+	width: 100%;
+}
+.buttonOn {
+	color: white;
+	width: 200px;
+	font-weight: 600;
+	background-color: rgb(74, 175, 74);
+}
+.controlElement {
+	margin-top: 10px;
+}
+
+.buttonOff {
+	color: white;
+	width: 200px;
+	font-weight: 600;
+	background-color: rgb(226, 76, 76);
+}
+
+@media screen and (max-width: 700px) {
+	.label {
+		font-size: 8px;
+	}
+	.selectionDiv {
+		margin-top: 15px;
+		margin-bottom: 30px;
+	}
+}

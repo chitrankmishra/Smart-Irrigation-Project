@@ -55,51 +55,53 @@ async function fetchWeather(city) {
 	response = await makeAsyncPostRequest("/get-weather-updates", queryObject);
 	// console.log(response);
 	weatherData = response.result;
-	textStart =
-		'<div class="row divWhiteBox weatherUnit mx-auto" >  <div class=" mx-auto weatherDataCollection" >';
-	dataHeaderTextStart = '<span class="statusDataHeader col-auto">';
-	dataEnd = "</span >";
-	dataTextStart = '<span class="statusDataText col-auto">';
-	textEnd = " </div></div>";
+	textStart = '<div class="row divWhiteBox weatherUnit mx-auto" >';
+	textStart +=
+		'<div class=" mx-auto weatherDataCollection col-sm-12" ><div class="row">';
+	dataHeaderTextStart3 =
+		'<div class="col-sm-3"><div class="row"><div class=" col-sm-6 statusDataHeader">';
+	dataHeaderTextStart2 =
+		'<div class="col-sm-2"><div class="row"><div class=" col-sm-12 statusDataHeader">';
+	dataHeaderTextStart1 =
+		'<div class="col-sm-1"><div class="row"><div class=" col-sm-12 statusDataHeader">';
+	dataEnd = "</div >";
+	dataEnd2 = "</div></div></div>";
+	dataTextStart = '<div class=" col-sm-6 statusDataText">';
+	textEnd = " </div></div></div>";
 	text = "";
 	for (var i = 0; i < 24; i++) {
 		text += "\n\n" + textStart;
 
 		text +=
-			dataHeaderTextStart +
-			"Time: " +
-			dataEnd +
-			dataTextStart +
-			weatherData.list[i].dt_text +
-			dataEnd;
+			dataHeaderTextStart2 + (i * 3 + 3) + " Hours From Now" + dataEnd2;
 		text +=
-			dataHeaderTextStart +
+			dataHeaderTextStart3 +
 			"Mean Temperature: " +
 			dataEnd +
 			dataTextStart +
 			toCelsius(weatherData.list[i].main.temp) +
 			" °C" +
-			dataEnd;
+			dataEnd2;
 		text +=
-			dataHeaderTextStart +
+			dataHeaderTextStart3 +
 			"Description: " +
 			dataEnd +
 			dataTextStart +
 			weatherData.list[i].weather[0].description +
-			dataEnd;
+			dataEnd2;
 		text +=
-			dataHeaderTextStart +
+			dataHeaderTextStart1 +
 			"<img class='weatherIcon' src='images/weather_icon/" +
 			weatherData.list[i].weather[0].icon +
 			".png'>" +
-			dataEnd;
+			dataEnd2;
 		text +=
-			dataHeaderTextStart +
+			dataHeaderTextStart3 +
 			"Conclusion: " +
 			dataEnd +
 			dataTextStart +
 			weatherData.list[i].weather[0].main +
-			dataEnd;
+			dataEnd2;
 		text += textEnd;
 		// console.log(text);
 	}

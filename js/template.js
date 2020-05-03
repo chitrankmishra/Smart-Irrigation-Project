@@ -1,15 +1,27 @@
 //python api url
-api_url = " https://thawing-coast-20586.herokuapp.com/";
+api_url = "http://127.0.0.1:5000";
+
+function validateEmail(email) {
+	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(String(email).toLowerCase());
+}
 
 function deleteCookies() {
 	setCookie("username", "", -1);
 }
 
-function setCookie(cname, cvalue, exdays) {
+async function setCookie(cname, cvalue, exdays) {
 	var dt = new Date();
 	dt.setTime(dt.getTime() + exdays * 24 * 60 * 60 * 1000);
 	var expires = "expires=" + dt.toUTCString();
-	document.cookie = cname + "=" + cvalue + "; " + expires;
+	if (!validateEmail(cvalue))
+		document.cookie = cname + "=" + cvalue + "; " + expires;
+	else {
+		response = await makeAsyncPostRequest("/get-username", {
+			email: cvalue,
+		});
+		document.cookie = cname + "=" + response["result"] + "; " + expires;
+	}
 }
 function getCookie(cname) {
 	var name = cname + "=";

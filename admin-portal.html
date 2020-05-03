@@ -1,1 +1,214 @@
+<html>
+	<head>
+		<title>Control Panel</title>
+		<link rel="stylesheet" type="text/css" href="css/admin-portal.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="bootstrap/css/bootstrap.min.css"
+		/>
 
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+
+		<script type="text/javascript" src="js/admin-portal.js"></script>
+		<script type="text/javascript" src="js/template.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<!-- <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script> -->
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+		<meta content="utf-8" http-equiv="encoding" />
+	</head>
+
+	<body class="body container-fluid">
+		<div class="row header" id="header">
+			<div class="logoDiv mx-auto d-block col-auto">
+				<a href="admin-home.html">
+					<div class="element">
+						<img src="" class="img-fluid logo" id="logo" />
+					</div>
+					<div class="element brandName" id="brandName">Custom</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="topnav sticky-top" id="topNav">
+			<a href="admin-home.html">Home</a>
+			<a href="admin-portal.html" class="active">Control Panel</a>
+			<a href="settings.html">Settings</a>
+			<a href="weather-updates.html">Weather Updates</a>
+			<a href="contact.html">Contact</a>
+			<a
+				href="index.html"
+				class="btnLogout float-right"
+				onclick="logout()"
+				>Logout</a
+			>
+			<a href="javascript:void(0);" class="icon" onclick="topNavToggle()">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+
+		<div class="selectionDiv row">
+			<div class="col-sm-10 mx-auto">
+				<div class="row">
+					<div class="col-sm-12" id="farmOptions">
+						<br />
+						<label for="farmNames">Select Your Farm:</label>
+						<select
+							class="form-control"
+							id="farmNames"
+							onchange="fetchDetails(document.getElementById('farmNames').value)"
+						>
+							<option value="">Select your option</option>
+							<option value="Jhansi">Jhansi</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="divBlackBox row">
+			<div class="row pageData mx-auto">
+				<div class="col-sm-7" id="introduction">
+					<div class="row divHeader">
+						Farm Control...!!
+					</div>
+					<div class="divDescriptionText">
+						Select a location from the available locations or select
+						your farm to get a live weather update on the go. We
+						fetch the most accurate weather details for the next 48
+						hours at a period of 3 hours.
+					</div>
+				</div>
+				<div class="col-sm-5" id="introImg">
+					<img src="images/chart.png" class="chartImg" />
+				</div>
+			</div>
+		</div>
+
+		<div class="divBlackBox">
+			<div class="col-sm-12 divHeader">
+				Control Panel
+			</div>
+			<div class="col-sm-12" id="warning">
+				Make sure the hardware is connected to the internet properly
+			</div>
+			<div id="controlDiv">
+				<!-- <div class="row controlSegment">
+					<div class="col-sm-2 mx-auto d-block">
+						<button
+							class="btn-sm buttonOn"
+							onclick="turnAutomationOFF()"
+						>
+							Automation: ON
+						</button>
+					</div>
+				</div>
+				<div class="row controlSegment divWhiteBox mx-auto">
+					<div class="col-sm-6">
+						<div class="row">
+							<div class="col-sm-6">Sensor 0:</div>
+							<div class="col-sm-6">
+								<input
+									type="text"
+									class="form-control-sm"
+									id="sensor0"
+									value="10%"
+									disabled
+								/>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="row">
+							<div class="col-sm-6">Sensor 1:</div>
+							<div class="col-sm-6">
+								<input
+									type="text"
+									class="form-control-sm"
+									id="sensor1"
+									value="10%"
+									disabled
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row controlSegment divWhiteBox mx-auto">
+					<div class="col-sm-3">
+						<span>Switch 0: Name</span>
+					</div>
+					<div class="col-sm-3">
+						<input
+							type="number"
+							class="timeInput form-control-sm"
+							id="switch0Time"
+							placeholder="Enter the time in seconds"
+						/>
+					</div>
+					<div class="col-sm-3">
+						<button class="btn-sm buttonOn">Status: ON</button>
+					</div>
+					<div class="col-sm-3">
+						<button class="btn-sm buttonOn">Automate This</button>
+					</div>
+				</div>
+				<div class="row controlSegment divWhiteBox mx-auto">
+					<div class="col-sm-3">
+						<span>Switch 1: Name</span>
+					</div>
+					<div class="col-sm-3">
+						<input
+							type="number"
+							class="timeInput form-control-sm"
+							id="switch1Time"
+							placeholder="Enter the time in seconds"
+						/>
+					</div>
+					<div class="col-sm-3">
+						<button class="btn-sm buttonOff">Status: OFF</button>
+					</div>
+					<div class="col-sm-3">
+						<button class="btn-sm buttonOff">
+							Remove Automation
+						</button>
+					</div>
+				</div> -->
+			</div>
+		</div>
+
+		<div class="row footer">
+			<div class="row">
+				<img src="images/gears.png" class="footerImg" />
+			</div>
+			<div class="footerDiv row">
+				<div class="col-auto mx-auto">
+					<img src="images/logo 2.png" class="footerLogo" />
+				</div>
+				<div class="col-auto footerData mx-auto d-block">
+					<div class="row slogan">
+						Trying to be the best in ourself !
+					</div>
+					<div class="row footerDescription">
+						An initiative to provide the best in class services to
+						our farmers and workers who work constantly to feed the
+						nation.
+					</div>
+					<div>
+						<!-- links -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />axasxsa -->
+	</body>
+</html>
+<script>
+	initialize();
+</script>

@@ -8,8 +8,8 @@
 }
 
 .weatherDataCollection {
+	width: 100%;
 	margin-top: 2px;
-	margin-bottom: 2px;
 	padding-right: 15px;
 	padding-left: 15px;
 	border-radius: 5px;
@@ -17,23 +17,20 @@
 }
 .weatherUnit {
 	width: 100%;
-	margin-bottom: 10px;
-	padding: 15px;
 }
 
 .statusDataHeader {
+	margin-top: auto;
 	color: Black;
-	font-size: 15px;
+	font-size: 16px;
 	font-weight: bold;
 	font-family: Baloo-Regular;
-	margin-right: 5px;
 }
 
 .statusDataText {
-	font-size: 15px;
+	font-size: 16px;
 	color: orange;
 	font-family: Baloo-Regular;
-	margin-right: 70px;
 }
 
 .weatherIcon {

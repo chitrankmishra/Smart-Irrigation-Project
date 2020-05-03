@@ -1,0 +1,13 @@
+@import "template.css";
+.formElement {
+	width: 100%;
+	margin-top: 10px;
+}
+.dataSegment {
+	text-align: center;
+}
+.button {
+	padding-left: 100px;
+	padding-right: 100px;
+	width: 200px;
+}
