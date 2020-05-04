@@ -1,6 +1,6 @@
 //python api url
-// api_url = "http://127.0.0.1:5000";
-api_url = "https://thawing-coast-20586.herokuapp.com/";
+api_url = "http://127.0.0.1:5000";
+// api_url = "https://thawing-coast-20586.herokuapp.com/";
 
 function validateEmail(email) {
 	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

@@ -1,0 +1,261 @@
+<html>
+	<head>
+		<title>Admin-Home</title>
+		<link rel="stylesheet" type="text/css" href="css/contact.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="bootstrap/css/bootstrap.min.css"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+
+		<script type="text/javascript" src="js/contact.js"></script>
+		<script type="text/javascript" src="js/template.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<!-- <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script> -->
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+		<meta content="utf-8" http-equiv="encoding" />
+	</head>
+
+	<body class="body container-fluid">
+		<div class="row header" id="header">
+			<div class="logoDiv mx-auto d-block col-auto">
+				<a href="admin-home.html">
+					<div class="element">
+						<img src="" class="img-fluid logo" id="logo" />
+					</div>
+					<div class="element brandName" id="brandName"></div>
+				</a>
+			</div>
+		</div>
+
+		<div class="topnav sticky-top" id="topNav">
+			<a href="admin-home.html">Home</a>
+			<a href="admin-portal.html">Control Panel</a>
+			<a href="settings.html">Settings</a>
+			<a href="weather-updates.html">Weather Updates</a>
+			<a href="contact.html" class="active">Contact</a>
+			<a
+				href="index.html"
+				class="btnLogout float-right"
+				onclick="logout()"
+				>Logout</a
+			>
+			<a href="javascript:void(0);" class="icon" onclick="topNavToggle()">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+
+		<div class="divBlackBox">
+			<div class="row">
+				<div class="col-sm-12 divHeader">Write your query...</div>
+				<div class="col-sm-12 divWhiteBox mx-auto dataSegment">
+					<div class="row">
+						<div class="col-sm-12">
+							<textarea
+								class="form-control formElement"
+								id="query"
+								placeholder="Write Your Query Here...!"
+							></textarea>
+						</div>
+					</div>
+					<button
+						class="btn btn-sm btn-success formElement button"
+						onclick="submitQuery()"
+					>
+						Submit Query
+					</button>
+					<span class="error" id="queryError">
+						Cannot Submit Query..!</span
+					>
+					<span class="success" id="querySuccess">
+						Query Submitted..!</span
+					>
+				</div>
+			</div>
+		</div>
+
+		<div class="divBlackBox">
+			<div class="row">
+				<div class="col-sm-12 divHeader">
+					Contact Us...!
+				</div>
+				<div class="col-sm-12 contactSet">
+					<div class="row">
+						<div class="col-sm-3 contactElement">
+							<img class="profile" src="images/chitrank.jpg" />
+						</div>
+						<div class="col-sm-8 divWhiteBox contactElement">
+							<div class="row">
+								<div class="col-sm-12 contactDetails">
+									<div class="row">
+										<div class="col-sm-3">Name:</div>
+										<div class="col-sm-9">
+											Chitrank Mishra
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-12 contactDetails">
+									<div class="row">
+										<div class="col-sm-3">Email:</div>
+										<div class="col-sm-9">
+											chitrankmishra010@gmail.com
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-12 contactDetails">
+									<div class="row">
+										<div class="col-sm-3">Mobile:</div>
+										<div class="col-sm-9">
+											9818693448
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-12 contactDetails">
+									<div class="row">
+										<div class="col-sm-3">LinkedIn:</div>
+										<div class="col-sm-9">
+											<a
+												href="https://www.linkedin.com/in/chitrank0614/"
+												>linkedin.com/chitrank0614</a
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-12 contactSet">
+					<div class="row">
+						<div class="col-sm-3 contactElement">
+							<img class="profile" src="images/dharmesh.jpg" />
+						</div>
+						<div class="col-sm-8 divWhiteBox contactElement">
+							<div class="row">
+								<div class="col-sm-12 contactDetails">
+									<div class="row">
+										<div class="col-sm-3">Name:</div>
+										<div class="col-sm-9">
+											Dharmesh Pratap Singh
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-12 contactDetails">
+									<div class="row">
+										<div class="col-sm-3">Email:</div>
+										<div class="col-sm-9">
+											dharmeshprataps@gmail.com
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-12 contactDetails">
+									<div class="row">
+										<div class="col-sm-3">Mobile:</div>
+										<div class="col-sm-9">8299159095</div>
+									</div>
+								</div>
+								<div class="col-sm-12 contactDetails">
+									<div class="row">
+										<div class="col-sm-3">LinkedIn:</div>
+										<div class="col-sm-9">
+											<a
+												href="https://www.linkedin.com/in/dharmesh-pratap-singh-b25259152/"
+												>linkedin.com/dharmesh-pratap-singh</a
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-12 contactSet">
+					<div class="row">
+						<div class="col-sm-3 contactElement">
+							<img class="profile" src="images/aman.jpg" />
+						</div>
+						<div class="col-sm-8 divWhiteBox contactElement">
+							<div class="row">
+								<div class="col-sm-12 contactDetails">
+									<div class="row">
+										<div class="col-sm-3">Name:</div>
+										<div class="col-sm-9">
+											Aman Khare
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-12 contactDetails">
+									<div class="row">
+										<div class="col-sm-3">Email:</div>
+										<div class="col-sm-9">
+											amankhare010@gmail.com
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-12 contactDetails">
+									<div class="row">
+										<div class="col-sm-3">Mobile:</div>
+										<div class="col-sm-9">
+											7388104777
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-12 contactDetails">
+									<div class="row">
+										<div class="col-sm-3">Facebook:</div>
+										<div class="col-sm-9">
+											<a
+												href="https://www.facebook.com/aman.khare.5"
+												>facebook.com/aman-khare</a
+											>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a<br />a -->
+
+		<div class="row footer">
+			<div class="row">
+				<img src="images/gears.png" class="footerImg" />
+			</div>
+			<div class="footerDiv row">
+				<div class="col-auto mx-auto">
+					<img src="images/logo 2.png" class="footerLogo" />
+				</div>
+				<div class="col-auto footerData mx-auto d-block">
+					<div class="row slogan">
+						Trying to be the best in ourself !
+					</div>
+					<div class="row footerDescription">
+						An initiative to provide the best in class services to
+						our farmers and workers who work constantly to feed the
+						nation.
+					</div>
+					<div>
+						<!-- links -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />axasxsa -->
+	</body>
+</html>
+<script>
+	initialize();
+</script>
