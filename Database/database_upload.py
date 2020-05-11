@@ -1,17 +1,17 @@
 import pymongo
 
-#database connection
-client = pymongo.MongoClient("mongodb+srv://chitrank_0614:chitrank0614@smartirrigation-scp4o.mongodb.net/test?retryWrites=true&w=majority")
-database=client.get_database("SmartIrrigation")
+# database connection
+client = pymongo.MongoClient(
+    "mongodb+srv://chitrank_0614:chitrank0614@smartirrigation-scp4o.mongodb.net/test?retryWrites=true&w=majority")
+database = client.get_database("SmartIrrigation")
 
-#collection connections
-crops=database.Crops
-grass=database.Grass
-rice=database.Rice
-wheat=database.Wheat
-weather_codes=database.WeatherCodes
-city_codes=database.CityCodes
-
+# collection connections
+crops = database.Crops
+grass = database.Grass
+rice = database.Rice
+wheat = database.Wheat
+weather_codes = database.WeatherCodes
+city_codes = database.CityCodes
 
 
 
@@ -206,7 +206,7 @@ city_codes=database.CityCodes
 #                             "MinHeight": 4, "MaxHeight": 5},
 #                         {"PeriodStart": 211681, "PeriodEnd": 221760,
 #                             "MinHeight": 5, "MaxHeight": 5},
-#                         {"PeriodStart": 221761, "PeriodEnd": 10000000, 
+#                         {"PeriodStart": 221761, "PeriodEnd": 10000000,
 #                             "MinHeight": 5, "MaxHeight": 5}])
 
 
@@ -258,11 +258,8 @@ city_codes=database.CityCodes
 #                           "MinHeight": 2.5, "MaxHeight": 3}
 #                          ])
 
-
-
-#print(records.count_documents({}))           # count the number of documents in the collection
+# print(records.count_documents({}))           # count the number of documents in the collection
 
 # x=list(records.find())                      #print the collection
 # for i in x:
 #     print(i)
-
