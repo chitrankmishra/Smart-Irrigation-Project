@@ -214,7 +214,7 @@ void sendDetails(){
         data += "{\"Status\": \"" + switchStatus[i] + "\", \"AutomationStatus\": \"" + autoActive[i] + "\"},";
     }
     data+="],";
-    data += "\"Sensor\":["
+    data += "\"Sensor\":[";
     for (int i = 0; i < sensorCount; i++) {
         data += "{\"Value\": \"" + String(getSensorValue(i)) + "\"},";
     }
