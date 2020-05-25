@@ -209,6 +209,8 @@ void turnOffAutomatedSwitches(){
 
 void sendDetails(){
     String data = "{";
+    data += "\"SwitchCount\":\""+String(switchCount)+"\",";
+    data += "\"SensorCount\":\""+String(sensorCount)+"\",";
     data += "\"Switch\":["; 
     for (int i = 0; i < switchCount; i++) {
         data += "{\"Status\": \"" + switchStatus[i] + "\", \"AutomationStatus\": \"" + autoActive[i] + "\"},";

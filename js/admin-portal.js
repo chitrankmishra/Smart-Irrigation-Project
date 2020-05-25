@@ -35,9 +35,9 @@ function displayData(data) {
 	// switchCount = data["switches"];
 	// sensorCount = data["sensors"];
 	// switchNames = data["switchNames"];
-	switchCount = 2;
-	sensorCount = 2;
-	switchNames = ["Light", "Motor"];
+	switchCount = data.SwitchCount;
+	sensorCount = data.SensorCount;
+	switchNames = data.SwitchNames;
 
 	text = "";
 	text +=
@@ -69,7 +69,7 @@ function displayData(data) {
 		finalText += text + "\n";
 	}
 	finalText += "</div>\n";
-	for (var i = 0; i < switchNames.length; i++) {
+	for (var i = 0; i < switchCount; i++) {
 		text = "";
 		text +=
 			"<div class='row controlSegment divWhiteBox mx-auto'>            <div class='col-sm-3 controlElement ' >                <span>Switch " +
@@ -116,11 +116,18 @@ async function fetchDetails(farmID) {
 	// displayData(response.result);
 
 	data = {
+		SwitchCount: 6,
+		SensorCount: 2,
 		Switch: [
+			{ Status: "ON", AutomationStatus: 0 },
+			{ Status: "OFF", AutomationStatus: 1 },
+			{ Status: "ON", AutomationStatus: 0 },
+			{ Status: "OFF", AutomationStatus: 1 },
 			{ Status: "ON", AutomationStatus: 0 },
 			{ Status: "OFF", AutomationStatus: 1 },
 		],
 		Sensor: [{ Value: "10" }, { Value: "20" }],
+		SwitchNames: ["Light", "Light", "Motor", "Motor", "Motor", "Motor"],
 		AutomationSwitch: { Status: "ON" },
 	};
 	displayData(data);
